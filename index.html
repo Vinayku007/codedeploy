@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Pipeline - Version 5</title>
+  <title>My Pipeline - Version 6 TEST</title>
 
   <style>
     body {
       margin: 0;
       font-family: "Segoe UI", sans-serif;
-      background: linear-gradient(to right, #232526, #414345);
+      background: linear-gradient(to right, #1e3c72, #2a5298);
       color: white;
       display: flex;
       justify-content: center;
@@ -18,159 +18,73 @@
     }
 
     .container {
-      background: rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.1);
       padding: 50px;
       border-radius: 18px;
       text-align: center;
-      width: 500px;
+      width: 520px;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
     }
 
     h1 {
-      font-size: 34px;
-      margin-bottom: 15px;
+      font-size: 36px;
+      color: #ff4444;
+      margin-bottom: 10px;
+    }
+
+    .version {
+      font-size: 22px;
+      font-weight: bold;
       color: #00ffcc;
+      margin-top: 10px;
     }
 
-    p {
-      font-size: 18px;
-      line-height: 1.6;
-      color: #f1f1f1;
-    }
-
-    .badge {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 10px 18px;
-      border-radius: 25px;
-      background: #00ffcc;
-      color: black;
-      font-weight: bold;
-    }
-
-    .author {
-      margin-top: 25px;
-      font-size: 20px;
-      font-weight: bold;
-      color: #ffd700;
-    }
-
-    .footer {
-      margin-top: 30px;
+    .timestamp {
+      margin-top: 15px;
       font-size: 14px;
       color: #cccccc;
     }
 
-    /* Likes Section */
-    .likes-section {
-      margin-top: 30px;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .like-btn {
-      background: rgba(255, 255, 255, 0.1);
-      border: 2px solid rgba(255, 255, 255, 0.2);
-      border-radius: 50px;
-      padding: 10px 20px;
-      cursor: pointer;
-      font-size: 18px;
+    .big-test {
+      margin-top: 25px;
+      padding: 12px;
+      background: red;
       color: white;
-      transition: all 0.3s ease;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .like-btn:hover {
-      transform: scale(1.1);
-      background: rgba(255, 255, 255, 0.2);
-    }
-
-    .like-btn.active {
-      border-color: #00ffcc;
-      background: rgba(0, 255, 204, 0.2);
-      color: #00ffcc;
-    }
-
-    .like-btn .count {
       font-weight: bold;
-      font-size: 16px;
+      border-radius: 10px;
+      font-size: 18px;
     }
 
-    .likes-label {
-      margin-top: 15px;
-      font-size: 13px;
-      color: #aaaaaa;
+    .footer {
+      margin-top: 25px;
+      font-size: 14px;
+      color: #dddddd;
     }
   </style>
 </head>
 
 <body>
   <div class="container">
-    <h1>🚀 Deployment Successful!</h1>
+    <h1>🚨 PIPELINE TEST DEPLOYMENT 🚨</h1>
 
-    <p>
-      Your application has been deployed using  
-      <strong>AWS CodePipeline</strong>.
-    </p>
+    <div class="version">Version 6 is Live</div>
 
-    <p class="author">
-      👨‍💻 Deployed by Vinaykumar using CodePipeline
-    </p>
-
-    <span class="badge">Version 5 is Live ✅</span>
-
-    <!-- Likes Section -->
-    <div class="likes-section">
-      <button class="like-btn" id="likeBtn" onclick="handleLike('like')">
-        👍 <span class="count" id="likeCount">24</span>
-      </button>
-      <button class="like-btn" id="loveBtn" onclick="handleLike('love')">
-        ❤️ <span class="count" id="loveCount">18</span>
-      </button>
-      <button class="like-btn" id="fireBtn" onclick="handleLike('fire')">
-        🔥 <span class="count" id="fireCount">31</span>
-      </button>
-      <button class="like-btn" id="rocketBtn" onclick="handleLike('rocket')">
-        🚀 <span class="count" id="rocketCount">12</span>
-      </button>
+    <div class="timestamp">
+      Deployment Test Time: <span id="time"></span>
     </div>
-    <div class="likes-label">React to this deployment!</div>
+
+    <div class="big-test">
+      If you see this RED BOX → New Deployment Worked
+    </div>
 
     <div class="footer">
-      AWS DevOps • Continuous Delivery • Automation
+      AWS DevOps • CodePipeline • Continuous Delivery
     </div>
   </div>
 
   <script>
-    const reactions = {
-      like: { btnId: 'likeBtn', countId: 'likeCount', active: false },
-      love: { btnId: 'loveBtn', countId: 'loveCount', active: false },
-      fire: { btnId: 'fireBtn', countId: 'fireCount', active: false },
-      rocket: { btnId: 'rocketBtn', countId: 'rocketCount', active: false }
-    };
-
-    function handleLike(type) {
-      const reaction = reactions[type];
-      const btn = document.getElementById(reaction.btnId);
-      const countEl = document.getElementById(reaction.countId);
-      let count = parseInt(countEl.textContent);
-
-      if (reaction.active) {
-        count--;
-        btn.classList.remove('active');
-        reaction.active = false;
-      } else {
-        count++;
-        btn.classList.add('active');
-        reaction.active = true;
-      }
-
-      countEl.textContent = count;
-    }
+    document.getElementById("time").textContent =
+      new Date().toLocaleString();
   </script>
 </body>
 </html>
