@@ -3,82 +3,53 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Pipeline - Version 6 TEST</title>
+  <title>Version 7 - FINAL TEST</title>
 
   <style>
     body {
       margin: 0;
-      font-family: "Segoe UI", sans-serif;
-      background: linear-gradient(to right, #1e3c72, #2a5298);
-      color: white;
+      font-family: Arial, sans-serif;
+      background: black;
+      color: yellow;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
     }
 
-    .container {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 50px;
-      border-radius: 18px;
+    .box {
       text-align: center;
-      width: 520px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      padding: 60px;
+      border: 5px solid red;
+      background: #111;
     }
 
     h1 {
-      font-size: 36px;
-      color: #ff4444;
-      margin-bottom: 10px;
+      font-size: 50px;
+      color: red;
+      margin-bottom: 20px;
     }
 
     .version {
-      font-size: 22px;
+      font-size: 30px;
       font-weight: bold;
-      color: #00ffcc;
-      margin-top: 10px;
+      margin-top: 20px;
     }
 
     .timestamp {
-      margin-top: 15px;
-      font-size: 14px;
-      color: #cccccc;
-    }
-
-    .big-test {
-      margin-top: 25px;
-      padding: 12px;
-      background: red;
-      color: white;
-      font-weight: bold;
-      border-radius: 10px;
+      margin-top: 20px;
       font-size: 18px;
-    }
-
-    .footer {
-      margin-top: 25px;
-      font-size: 14px;
-      color: #dddddd;
+      color: white;
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
-    <h1>🚨 PIPELINE TEST DEPLOYMENT 🚨</h1>
-
-    <div class="version">Version 6 is Live</div>
-
+  <div class="box">
+    <h1>VERSION 7 LIVE 🚀</h1>
+    <div class="version">If you see BLACK background → Deployment Worked</div>
     <div class="timestamp">
-      Deployment Test Time: <span id="time"></span>
-    </div>
-
-    <div class="big-test">
-      If you see this RED BOX → New Deployment Worked
-    </div>
-
-    <div class="footer">
-      AWS DevOps • CodePipeline • Continuous Delivery
+      Loaded At: <span id="time"></span>
     </div>
   </div>
 
